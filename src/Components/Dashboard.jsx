@@ -155,11 +155,7 @@ function Dashboard() {
           </Toolbar>
         </AppBar>
       </Box>
-      <Box sx={{ m: 2, textAlign: "center" }} style={{}}>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button variant="contained">Go Home</Button>
-        </Link>
-      </Box>
+     
       <Box sx={{ minWidth: 140, m: 5 }}>
         <FormControl sx={{ width: "200px" }}>
           <InputLabel id="demo-simple-select-label">View By</InputLabel>
@@ -307,7 +303,12 @@ function Dashboard() {
             )}
           </DialogActions>
         </BootstrapDialog>
+      </Box> <Box sx={{ m: 2, textAlign: "center" }} style={{}}>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Button variant="contained">Go Home</Button>
+        </Link>
       </Box>
+
     </>
   );
 }
