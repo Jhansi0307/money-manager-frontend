@@ -103,13 +103,13 @@ function Dashboard() {
       expense: formData.expense,
       time: formData.time,
       date: formData.date,
-      desc: formData.desc,
+      description: formData.description,
       type: formData.type,
     });
     setFormData({
       income: "",
       expense: "",
-      desc: "",
+      description: "",
       date: "",
       time: "",
       type: "",
