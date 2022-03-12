@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import IconButton from "@mui/material/IconButton";
+import HomeIcon from '@mui/icons-material/Home'
 import {
   FormControl,
   Toolbar,
@@ -65,21 +67,7 @@ BootstrapDialogTitle.propTypes = {
 };
 
 function Dashboard() {
-  //clock
-  const [clock, setClock] = useState(
-    new Date()
-      .toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
-      .split(",")[1]
-  );
-  setInterval(
-    () =>
-      setClock(
-        new Date()
-          .toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
-          .split(",")[1]
-      ),
-    1000
-  );
+
   //alert add incom
   const [open, setOpen] = React.useState(false);
 
@@ -95,7 +83,7 @@ function Dashboard() {
     income: "",
     expense: "",
     type: "",
-    desc: "",
+    description: "",
   });
   const handleChangeText = (e) => {
     var time = new Date();
@@ -115,13 +103,13 @@ function Dashboard() {
       expense: formData.expense,
       time: formData.time,
       date: formData.date,
-      desc: formData.desc,
+      description: formData.description,
       type: formData.type,
     });
     setFormData({
       income: "",
       expense: "",
-      desc: "",
+      description: "",
       date: "",
       time: "",
       type: "",
@@ -130,35 +118,44 @@ function Dashboard() {
   };
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{ p: 0.5 }}>
+      <Box sx={{ flexGrow: 1}}>
+        <AppBar position="static" sx={{ p:1,backgroundColor:"turquoise" }}>
           <Toolbar>
             <Typography
-              variant="h6"
+              variant="h4"
               component="div"
-              sx={{ flexGrow: 1, ml: 2.5, fontWeight: "600" }}
+              sx={{ flexGrow: 1, ml:3, fontWeight: "600"}}
             >
               <Link
                 to="/dashboard"
-                style={{ color: "white", textDecoration: "none" }}
+                style={{ color: "black", textDecoration: "none" }}
               >
-                DashBoard
+               Money Manager Dashboard
               </Link>
             </Typography>
             <Button
               color="secondary"
+              style={{backgroundColor:"limegreen"}}
               variant="contained"
               onClick={handleClickOpen}
             >
-              Add Income
+             Add Income &nbsp; &nbsp;<AttachMoneyIcon/>
             </Button>
+        
+        <Box sx={{ m:3, textAlign: "center" }} >
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Button  style={{color: "white",backgroundColor:"mediumvioletred ",opacity:1}} variant="contained">
+          Back To Home  &nbsp;&nbsp;  <HomeIcon/></Button>
+        </Link>
+      </Box>
           </Toolbar>
         </AppBar>
+       
       </Box>
      
-      <Box sx={{ minWidth: 140, m: 5 }}>
+      <Box sx={{ minWidth: 140, m: 5,textAlign: "center",}}>
         <FormControl sx={{ width: "200px" }}>
-          <InputLabel id="demo-simple-select-label">View By</InputLabel>
+          <InputLabel id="demo-simple-select-label" sx={{fontSize:20,color: "deeppink"}}>View By</InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -166,39 +163,30 @@ function Dashboard() {
           >
             <Link
               to="/weekly"
-              style={{ color: "black", textDecoration: "none" }}
+              style={{ color: "mediumvioletred", textDecoration: "none" }}
             >
               <MenuItem>Weekly</MenuItem>
             </Link>
             <Link
               to="/monthly"
-              style={{ color: "black", textDecoration: "none" }}
+              style={{ color: "mediumvioletred", textDecoration: "none" }}
             >
               <MenuItem>Monthly</MenuItem>
             </Link>
             <Link
               to="/yearly"
-              style={{ color: "black", textDecoration: "none" }}
+              style={{ color: "mediumvioletred", textDecoration: "none" }}
             >
               <MenuItem>Yearly</MenuItem>
             </Link>
           </Select>
         </FormControl>
-        <Box
-          sx={{
-            float: "right",
-            mr: 5,
-            fontFamily: "Zen Kaku Gothic Antique",
-            fontWeight: "600",
-            fontSize: "25px",
-          }}
-        >
-          {clock}
-        </Box>
+       
       </Box>
 
-      <Box>
+      <Box >
         <BootstrapDialog
+        style={{ backgroundColor:"lightcoral"}}
           onClose={handleClose}
           aria-labelledby="customized-dialog-title"
           open={open}
@@ -263,7 +251,7 @@ function Dashboard() {
             <Typography gutterBottom sx={{ px: 5 }}>
               <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">
-                  Description*
+                  description*
                 </InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
@@ -303,11 +291,8 @@ function Dashboard() {
             )}
           </DialogActions>
         </BootstrapDialog>
-      </Box> <Box sx={{ m: 2, textAlign: "center" }} style={{}}>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button variant="contained">Go Home</Button>
-        </Link>
-      </Box>
+      </Box> 
+     
 
     </>
   );
