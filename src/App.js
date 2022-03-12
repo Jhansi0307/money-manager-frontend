@@ -15,6 +15,8 @@ function App() {
         <Route path='/weekly' element={<Weekly/>}/>
         <Route path='/monthly' element={<Monthly/>}/>
         <Route path='/yearly' element={<Yearly/>}/>
+       
+       
       </Routes>
     </>
   );
