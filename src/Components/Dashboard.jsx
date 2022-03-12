@@ -78,12 +78,12 @@ function Dashboard() {
     e.preventDefault();
     setOpen(false);
   };
-  //desc State
+  //Description State
   const [formData, setFormData] = useState({
     income: "",
     expense: "",
     type: "",
-    desc: "",
+    description: "",
   });
   const handleChangeText = (e) => {
     var time = new Date();
@@ -128,7 +128,7 @@ function Dashboard() {
             >
               <Link
                 to="/dashboard"
-                style={{ color: "black", textdescoration: "none" }}
+                style={{ color: "black", textDecoration: "none" }}
               >
                Money Manager Dashboard
               </Link>
@@ -143,7 +143,7 @@ function Dashboard() {
             </Button>
         
         <Box sx={{ m:3, textAlign: "center" }} >
-        <Link to="/" style={{ textdescoration: "none" }}>
+        <Link to="/" style={{ textDecoration: "none" }}>
           <Button  style={{color: "white",backgroundColor:"mediumvioletred ",opacity:1}} variant="contained">
           Back To Home  &nbsp;&nbsp;  <HomeIcon/></Button>
         </Link>
@@ -163,19 +163,19 @@ function Dashboard() {
           >
             <Link
               to="/weekly"
-              style={{ color: "mediumvioletred", textdescoration: "none" }}
+              style={{ color: "mediumvioletred", textDecoration: "none" }}
             >
               <MenuItem>Weekly</MenuItem>
             </Link>
             <Link
               to="/monthly"
-              style={{ color: "mediumvioletred", textdescoration: "none" }}
+              style={{ color: "mediumvioletred", textDecoration: "none" }}
             >
               <MenuItem>Monthly</MenuItem>
             </Link>
             <Link
               to="/yearly"
-              style={{ color: "mediumvioletred", textdescoration: "none" }}
+              style={{ color: "mediumvioletred", textDecoration: "none" }}
             >
               <MenuItem>Yearly</MenuItem>
             </Link>
@@ -256,7 +256,7 @@ function Dashboard() {
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
-                  label="desc"
+                  label="Description"
                   required
                   name="desc"
                   value={formData.desc}

@@ -167,8 +167,7 @@ function Monthly() {
                             {row.expense}
                           </TableCell>
                           <TableCell sx={{ textAlign: "center" }}>
-                            {row.desc.charAt(0).toUpperCase() +
-                              row.desc.slice(1)}
+                            {row.desc}
                           </TableCell>
                           <TableCell sx={{ textAlign: "center" }}>
                             {row.date.split(" ").slice(1).join(" ")}
@@ -224,8 +223,7 @@ function Monthly() {
                               {row.expense}
                             </TableCell>
                             <TableCell sx={{ textAlign: "center" }}>
-                              {row.desc.charAt(0).toUpperCase() +
-                                row.desc.slice(1)}
+                              {row.desc}
                             </TableCell>
                             <TableCell sx={{ textAlign: "center" }}>
                               {row.date.split(" ").slice(1).join(" ")}

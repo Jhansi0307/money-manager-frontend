@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
+import DashboardIcon from '@mui/icons-material/Dashboard';
 function Home() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -19,43 +20,45 @@ function Home() {
   data.map((i) => (expense = expense + parseInt(i.expense)));
   const useStyles = makeStyles({
     root: {
-      background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+      
       border: 0,
       borderRadius: 15,
       boxShadow: "0 3px 5px 2px rgba(242, 197, 153, .3)",
-      color: "white",
+      color: "blue",
       height: 48,
       padding: "0 30px",
+     
     },
     root1: {
-      background: "linear-gradient(45deg,  #6683b3 30%, #2e60b0 90%)",
+     
       border: 0,
       borderRadius: 15,
       boxShadow: "0 3px 5px 2px rgba(124, 122, 204, .3)",
-      color: "white",
+      color: "red",
       height: 48,
       padding: "0 30px",
+     
     },
   });
   const classes = useStyles();
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" sx={{ p: 0.5 }}>
+      <Box sx={{ flexGrow: 1}}>
+        <AppBar position="static" sx={{ p: 0.5 ,bgcolor:"darkcyan"}}>
           <Toolbar>
             <Typography
               variant="h6"
               component="div"
               sx={{ flexGrow: 1, ml: 2.5, fontWeight: "600" }}
             >
-              Home
+              Welcome to Home Page
             </Typography>
             <Link
               to="/dashboard"
-              style={{ color: "white", textDecoration: "none" }}
+              style={{ color: "black", textDecoration: "none" }}
             >
-              <Button color="inherit" variant="outlined">
-                Go To DashBoard
+              <Button color="inherit" style={{backgroundColor: "limegreen"}}>
+                Go To DashBoard  &nbsp; &nbsp; <DashboardIcon/>
               </Button>
             </Link>
           </Toolbar>
@@ -69,8 +72,9 @@ function Home() {
             minWidth: "200px",
             minHeight: "100px",
             borderRadius: "10px",
-            m: 4,
+            marginLeft:"100px",
             border: 1,
+            marginTop:"40px",
             float: "left",
           }}
         >
@@ -79,8 +83,9 @@ function Home() {
               px: 2,
               m: 1,
               fontWeight: "600",
-              fontFamily: "Lato",
-              fontSize: "22px",
+              textAlign: "center",
+              fontSize: "20px",
+
             }}
           >
             Total Income Added
@@ -90,8 +95,8 @@ function Home() {
               px: 2,
               m: 1,
               fontWeight: "600",
-              fontFamily: "Lato",
-              fontSize: "22px",
+              textAlign: "center",
+              fontSize: "20px",
             }}
           >
             {income}
@@ -104,7 +109,8 @@ function Home() {
             minWidth: "200px",
             minHeight: "100px",
             borderRadius: "10px",
-            m: 4,
+            marginLeft: "200px",
+            marginTop:"40px",
             border: 1,
             float: "left",
           }}
@@ -114,8 +120,8 @@ function Home() {
               px: 2,
               m: 1,
               fontWeight: "600",
-              fontFamily: "Lato",
-              fontSize: "22px",
+              textAlign: "center",
+              fontSize: "20px",
             }}
           >
             Total Expense Added
@@ -125,8 +131,8 @@ function Home() {
               px: 2,
               m: 1,
               fontWeight: "600",
-              fontFamily: "Lato",
-              fontSize: "22px",
+              textAlign: "center",
+              fontSize: "20px",
             }}
           >
             {expense}
