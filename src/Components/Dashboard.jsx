@@ -103,7 +103,7 @@ function Dashboard() {
       expense: formData.expense,
       time: formData.time,
       date: formData.date,
-      description: formData.description,
+      desc: formData.desc,
       type: formData.type,
     });
     setFormData({
